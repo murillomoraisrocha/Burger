@@ -13,11 +13,11 @@ android {
     buildTypes {
 
         debug {
-            buildConfigField "String", "API_URL", "\"http://localhost:8080/api\""
+            buildConfigField "String", "API_URL", "\"http://192.168.0.6:8080/api\""
         }
         release {
             minifyEnabled false
-            buildConfigField "String", "API_URL", "\"http://localhost:8080/api\""
+            buildConfigField "String", "API_URL", "\"http://192.168.0.6:8080/api\""
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -30,7 +30,9 @@ dependencies {
     implementation 'com.mobsandgeeks:android-saripaar:2.1.0-SNAPSHOT'
     implementation 'com.squareup.retrofit:retrofit:1.9.0'
     implementation 'com.squareup.okhttp:okhttp:2.4.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.+'
     testImplementation 'junit:junit:4.12'
     implementation 'com.jakewharton:butterknife:8.8.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'

@@ -25,10 +25,10 @@ public class GetSnacks {
 
     public void get(String TAG) {
         Module.service(false).getSnack(
-                new CancelableCallback<InputDefault<List<InSnack>>>(TAG) {
+                new CancelableCallback<List<InSnack>>(TAG) {
                     @Override
-                    public void onSuccess(InputDefault<List<InSnack>> inputDefault, Response response) {
-                        getSnacksOnListener.successGetSnacksOnListener(inputDefault.getResult());
+                    public void onSuccess(List<InSnack> list, Response response) {
+                        getSnacksOnListener.successGetSnacksOnListener(list);
                     }
 
                     @Override

@@ -11,7 +11,7 @@ public class InSnack {
 
     private String image;
 
-    private List<InIngredients> inIngredients;
+    private List<Integer> ingredients;
 
 
     public int getColor_id() {
@@ -46,11 +46,11 @@ public class InSnack {
         this.image = image;
     }
 
-    public List<InIngredients> getInIngredients() {
-        return inIngredients;
+    public List<Integer> getIngredients() {
+        return ingredients;
     }
 
-    public void setInIngredients(List<InIngredients> inIngredients) {
-        this.inIngredients = inIngredients;
+    public void setIngredients(List<Integer> ingredients) {
+        this.ingredients = ingredients;
     }
 }
