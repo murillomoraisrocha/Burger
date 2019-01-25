@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 
 import br.com.app.burg.burger.Presenter.PresenterIngredients;
 import br.com.app.burg.burger.Presenter.PresenterSnack;
+import br.com.app.burg.burger.adapters.IngredietsAdapter;
 import br.com.app.burg.burger.adapters.SnackAdapter;
 import br.com.app.burg.burger.utils.Util;
 import butterknife.BindView;
@@ -42,7 +43,10 @@ public class IngredientsActivity extends AppCompatActivity {
 
     }
 
+    public void setAdpter(IngredietsAdapter ingredietsAdapter){
+        rvIngredients.setAdapter(ingredietsAdapter);
 
+    }
 
 
 
