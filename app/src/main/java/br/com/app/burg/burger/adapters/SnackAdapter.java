@@ -94,6 +94,8 @@ public class SnackAdapter extends RecyclerView.Adapter<SnackAdapter.MyViewHolder
             etTitleSnack = itemView.findViewById(R.id.etTitleSnack);
             tvPrice = itemView.findViewById(R.id.tvPrice);
             ivBurger = itemView.findViewById(R.id.ivBurger);
+            itemView.setOnClickListener(this);
+            itemView.setOnLongClickListener(this);
 
 
         }
@@ -124,12 +126,15 @@ public class SnackAdapter extends RecyclerView.Adapter<SnackAdapter.MyViewHolder
         for (Integer idIngrediet : inIngredients) {
             int id = idIngrediet;
 
-            for (InIngredient i : ing) {
-                if (i.getId() == id) {
-                    amount += i.getPrice();
-                }
+            if (ing.size() > 0) {
+                for (InIngredient i : ing) {
+                    if (i.getId() == id) {
+                        amount += i.getPrice();
+                    }
 
+                }
             }
+
         }
 
         return amount;

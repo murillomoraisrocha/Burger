@@ -1,15 +1,18 @@
 package br.com.app.burg.burger.Presenter;
 
+import android.content.Intent;
 import android.view.View;
 
 import java.util.List;
 
+import br.com.app.burg.burger.IngredientsActivity;
 import br.com.app.burg.burger.MainActivity;
 import br.com.app.burg.burger.adapters.SnackAdapter;
 import br.com.app.burg.burger.callback.Get.GetIngredients;
 import br.com.app.burg.burger.callback.Get.GetSnacks;
 import br.com.app.burg.burger.interfaces.RecyclerViewOnClickListenerHack;
 import br.com.app.burg.burger.model.api.in.InIngredient;
+import br.com.app.burg.burger.model.api.in.InIngredients;
 import br.com.app.burg.burger.model.api.in.InSnack;
 import br.com.app.burg.burger.pattern.Singleton;
 import retrofit.RetrofitError;
@@ -49,7 +52,7 @@ public class PresenterSnack implements GetSnacks.GetSnacksOnListener, GetIngredi
 
     @Override
     public void onClickListener(View view, int position, InSnack item) {
-        String teste = "";
+        goToIngredients(item);
     }
 
     @Override
@@ -69,5 +72,9 @@ public class PresenterSnack implements GetSnacks.GetSnacksOnListener, GetIngredi
     @Override
     public void failGetIngredientsOnListener(RetrofitError error) {
 
+    }
+
+    public void goToIngredients(InSnack inSnack) {
+        mainActivity.goToIngredients(inSnack);
     }
 }
