@@ -51,8 +51,9 @@ public class IngredietsAdapter extends RecyclerView.Adapter<IngredietsAdapter.My
 
         InIngredient item = mList.get(position);
         myViewHolder.etNameIngredient.setText(item.getName());
-
         Picasso.get().load(item.getImage()).into(myViewHolder.ivIngredient);
+
+
         myViewHolder.etAmountIngredient.setText(Util.formatMoney(getAmountIngredient(item), true));
 
 
@@ -134,5 +135,8 @@ public class IngredietsAdapter extends RecyclerView.Adapter<IngredietsAdapter.My
         return amount;
 
     }
+
+
+
     //endregion
 }

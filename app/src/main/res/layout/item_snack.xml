@@ -3,46 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="110dp">
+
+    <TextView
+        android:id="@+id/tvPrice"
+        style="@style/title_snack"
+        android:layout_width="89dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.395"
+        app:layout_constraintStart_toEndOf="@+id/etTitleSnack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/etTitleSnack"
+        style="@style/title_snack"
+        android:layout_width="91dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="Titulo"
+        app:layout_constraintStart_toEndOf="@+id/ivBurger"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ivBurger"
-        android:layout_width="97dp"
-        android:layout_height="76dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="90dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintVertical_bias="0.307"
         app:srcCompat="@drawable/nofoto" />
 
-    <LinearLayout
-        android:layout_width="190dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/tvItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="14dp"
+        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/ivBurger"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.545">
+        app:layout_constraintTop_toBottomOf="@+id/etTitleSnack" />
 
-        <TextView
-            android:id="@+id/etTitleSnack"
-            style="@style/title_snack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Titulo" />
-
-        <TextView
-            android:id="@+id/tvPrice"
-            style="@style/title_snack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

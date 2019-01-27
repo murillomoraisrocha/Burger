@@ -3,7 +3,6 @@ package br.com.app.burg.burger.model.api.in;
 import java.util.List;
 
 public class InSnack {
-    private int color_id;
 
     private int id;
 
@@ -13,14 +12,6 @@ public class InSnack {
 
     private List<Integer> ingredients;
 
-
-    public int getColor_id() {
-        return color_id;
-    }
-
-    public void setColor_id(int color_id) {
-        this.color_id = color_id;
-    }
 
     public int getId() {
         return id;

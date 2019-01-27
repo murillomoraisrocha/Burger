@@ -52,6 +52,7 @@ public class PresenterSnack implements GetSnacks.GetSnacksOnListener, GetIngredi
 
     @Override
     public void onClickListener(View view, int position, InSnack item) {
+        Singleton.getInstance().setInSnack(item);
         goToIngredients(item);
     }
 

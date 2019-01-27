@@ -12,20 +12,20 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 ;import br.com.app.burg.burger.R;
 import br.com.app.burg.burger.interfaces.RecyclerViewOnClickListenerHack;
 import br.com.app.burg.burger.model.api.in.InIngredient;
+import br.com.app.burg.burger.model.api.in.InIngredients;
 import br.com.app.burg.burger.model.api.in.InSnack;
 import br.com.app.burg.burger.pattern.Singleton;
 import br.com.app.burg.burger.utils.MyApplication;
 import br.com.app.burg.burger.utils.Util;
 //endregion
 
-/**
- * Created by Márcio Lima on 4/5/15.
- */
+
 public class SnackAdapter extends RecyclerView.Adapter<SnackAdapter.MyViewHolder> {
 
     //region GLOBAL VARIABLES
@@ -53,12 +53,11 @@ public class SnackAdapter extends RecyclerView.Adapter<SnackAdapter.MyViewHolder
         Picasso.get().load(item.getImage()).into(myViewHolder.ivBurger);
         myViewHolder.tvPrice.setText(Util.formatMoney(getAmountSnack(item.getIngredients()), true));
 
-//        myViewHolder.tvAddress.setText(String.format("%s, %s\n%s/%s", item.getStreet(), item.getNumber(), item.getCity(), item.getState()));
-//        if (position % 2 == 0) {
-//            myViewHolder.rlAddress.setBackgroundColor(ContextCompat.getColor(MyApplication.getContext(), R.color.gray2));
-//        } else {
-//            myViewHolder.rlAddress.setBackgroundColor(ContextCompat.getColor(MyApplication.getContext(), R.color.gray4));
-//        }
+        if (getitemIngredient(item.getIngredients()) != null ){
+            String teste = getitemIngredient(item.getIngredients());
+            myViewHolder.tvItem.setText(teste);
+        }
+
 
     }
 
@@ -86,6 +85,7 @@ public class SnackAdapter extends RecyclerView.Adapter<SnackAdapter.MyViewHolder
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         TextView etTitleSnack;
         TextView tvPrice;
+        TextView tvItem;
         ImageView ivBurger;
 
         public MyViewHolder(View itemView) {
@@ -93,6 +93,7 @@ public class SnackAdapter extends RecyclerView.Adapter<SnackAdapter.MyViewHolder
 
             etTitleSnack = itemView.findViewById(R.id.etTitleSnack);
             tvPrice = itemView.findViewById(R.id.tvPrice);
+            tvItem = itemView.findViewById(R.id.tvItem);
             ivBurger = itemView.findViewById(R.id.ivBurger);
             itemView.setOnClickListener(this);
             itemView.setOnLongClickListener(this);
@@ -138,6 +139,27 @@ public class SnackAdapter extends RecyclerView.Adapter<SnackAdapter.MyViewHolder
         }
 
         return amount;
+
+    }
+
+    public String getitemIngredient(List<Integer> inIngredients) {
+
+        List<InIngredient> ing = Singleton.getInstance().getInIngredientList();
+        String list = "";
+        for (Integer idIngredient : inIngredients) {
+            int id = idIngredient;
+
+            if (ing.size() > 0) {
+                for (InIngredient i : ing) {
+                    if (i.getId() == id) {
+                        list = list + " *" + i.getName();
+                    }
+
+                }
+            }
+
+        }
+        return list;
 
     }
     //endregion
