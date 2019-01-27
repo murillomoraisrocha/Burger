@@ -1,6 +1,7 @@
 package br.com.app.burg.burger.Presenter;
 
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.gson.JsonObject;
 
@@ -88,6 +89,8 @@ public class PresenterIngredients implements RecyclerViewOnClickListenerHack<InI
 
     @Override
     public void successGetIngredientsSnacksOnListener(InExtras inExtras) {
+        Util.showDefaultMessage("Item Adicionado no cariinho com sucesso!", Toast.LENGTH_LONG);
+        ingredientsActivity.goToCart();
 
     }
 

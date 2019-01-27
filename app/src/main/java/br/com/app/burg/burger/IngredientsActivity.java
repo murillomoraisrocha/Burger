@@ -1,5 +1,6 @@
 package br.com.app.burg.burger;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -78,6 +79,10 @@ public class IngredientsActivity extends AppCompatActivity {
         presenterIngredient.addCart(Singleton.getInstance().getInSnack().getId());
     }
 
+    public void goToCart() {
+        Intent myIntent = new Intent(this, OrderActivity.class);
+        this.startActivity(myIntent);
+    }
 
 
 

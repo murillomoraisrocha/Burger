@@ -20,6 +20,9 @@
         <activity
             android:name=".IngredientsActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".OrderActivity"
+            android:screenOrientation="portrait" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 

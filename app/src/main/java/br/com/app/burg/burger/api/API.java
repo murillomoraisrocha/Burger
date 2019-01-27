@@ -6,6 +6,7 @@ import java.util.List;
 
 import br.com.app.burg.burger.model.api.in.InExtras;
 import br.com.app.burg.burger.model.api.in.InIngredient;
+import br.com.app.burg.burger.model.api.in.InOrder;
 import br.com.app.burg.burger.model.api.in.InSnack;
 import br.com.app.burg.burger.model.api.in.InputDefault;
 import br.com.app.burg.burger.utils.CancelableCallback;
@@ -32,6 +33,11 @@ public interface API {
     @GET("/ingrediente")
     public void getIngredients(
             CancelableCallback<List<InIngredient>> TAG
+    );
+
+    @GET("/ingrediente")
+    public void getOrders(
+            CancelableCallback<List<InOrder>> TAG
     );
 
 
