@@ -11,6 +11,11 @@ public class Singleton {
     private static Singleton mInstance = null;
     private List<InIngredient> inIngredientList;
     private InSnack inSnack;
+    private List<InSnack> snacks;
+    private double cartAmount;
+    private int counCheese;
+
+
 
 
     public static Singleton getInstance() {
@@ -34,5 +39,29 @@ public class Singleton {
 
     public void setInSnack(InSnack inSnack) {
         this.inSnack = inSnack;
+    }
+
+    public List<InSnack> getSnacks() {
+        return snacks;
+    }
+
+    public void setSnacks(List<InSnack> snacks) {
+        this.snacks = snacks;
+    }
+
+    public double getCartAmount() {
+        return cartAmount;
+    }
+
+    public void setCartAmount(double cartAmount) {
+        this.cartAmount = cartAmount;
+    }
+
+    public int getCounCheese() {
+        return counCheese;
+    }
+
+    public void setCounCheese(int counCheese) {
+        this.counCheese = counCheese;
     }
 }

@@ -23,6 +23,9 @@
         <activity
             android:name=".OrderActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".PersonalizeSnackActivity"
+            android:screenOrientation="portrait" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 

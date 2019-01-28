@@ -9,6 +9,7 @@ import br.com.app.burg.burger.model.api.in.InIngredient;
 import br.com.app.burg.burger.model.api.in.InOrder;
 import br.com.app.burg.burger.model.api.in.InSnack;
 import br.com.app.burg.burger.model.api.in.InputDefault;
+import br.com.app.burg.burger.model.api.out.OutExtras;
 import br.com.app.burg.burger.utils.CancelableCallback;
 import retrofit.http.Body;
 import retrofit.http.GET;
@@ -35,7 +36,7 @@ public interface API {
             CancelableCallback<List<InIngredient>> TAG
     );
 
-    @GET("/ingrediente")
+    @GET("/pedido")
     public void getOrders(
             CancelableCallback<List<InOrder>> TAG
     );
@@ -49,5 +50,6 @@ public interface API {
             @Path("lanche_id") Integer lanche_id,
             CancelableCallback<InExtras> TAG
     );
+
 
 }

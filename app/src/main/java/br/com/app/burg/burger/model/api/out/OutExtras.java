@@ -1,8 +1,8 @@
-package br.com.app.burg.burger.model.api.in;
+package br.com.app.burg.burger.model.api.out;
 
 import java.util.List;
 
-public class InExtras {
+public class OutExtras {
 
 
     private List<Integer> extras;

@@ -40,9 +40,13 @@ public class PresenterSnack implements GetSnacks.GetSnacksOnListener, GetIngredi
 
     @Override
     public void successGetSnacksOnListener(List<InSnack> data) {
-        SnackAdapter snackAdapter = new SnackAdapter(data);
-        snackAdapter.setRecyclerViewOnClickListenerHack(this);
-        mainActivity.setAdpter(snackAdapter);
+        if (data.size() > 0 ){
+            Singleton.getInstance().setSnacks(data);
+            SnackAdapter snackAdapter = new SnackAdapter(data);
+            snackAdapter.setRecyclerViewOnClickListenerHack(this);
+            mainActivity.setAdpter(snackAdapter);
+        }
+
     }
 
     @Override

@@ -2,20 +2,27 @@ package br.com.app.burg.burger.Presenter;
 
 import android.view.View;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.app.burg.burger.IngredientsActivity;
 import br.com.app.burg.burger.OrderActivity;
+import br.com.app.burg.burger.adapters.CartAdapter;
+import br.com.app.burg.burger.adapters.SnackAdapter;
 import br.com.app.burg.burger.callback.Get.GetOrders;
 import br.com.app.burg.burger.interfaces.RecyclerViewOnClickListenerHack;
 import br.com.app.burg.burger.model.api.in.InIngredient;
 import br.com.app.burg.burger.model.api.in.InOrder;
+import br.com.app.burg.burger.model.api.in.InSnack;
+import br.com.app.burg.burger.pattern.Singleton;
+import br.com.app.burg.burger.utils.Util;
 import retrofit.RetrofitError;
 
 
 public class PresenterOrders implements RecyclerViewOnClickListenerHack<InIngredient>, GetOrders.GetOrdersOnListener {
 
     private OrderActivity orderActivity;
+    private double amountTotal = 0.d;
 
     public PresenterOrders(OrderActivity orderActivity) {
 
@@ -23,7 +30,7 @@ public class PresenterOrders implements RecyclerViewOnClickListenerHack<InIngred
 
     }
 
-    public  void getOrders(){
+    public void getOrders() {
         GetOrders getOrders = new GetOrders(this);
         getOrders.get("");
     }
@@ -41,7 +48,11 @@ public class PresenterOrders implements RecyclerViewOnClickListenerHack<InIngred
 
     @Override
     public void successGetOrdersOnListener(List<InOrder> data) {
-        String teste = "";
+        if (data.size() > 0) {
+            CartAdapter cartAdapter = new CartAdapter(data);
+            cartAdapter.setRecyclerViewOnClickListenerHack(this);
+            orderActivity.setAdpter(cartAdapter);
+        }
     }
 
     @Override
@@ -49,29 +60,6 @@ public class PresenterOrders implements RecyclerViewOnClickListenerHack<InIngred
         String teste = "";
 
     }
-
-//    public double getAmountSnack(List<Integer> inIngredients) {
-//
-//        double amount = 0d;
-//        List<InIngredient> ing = Singleton.getInstance().getInIngredientList();
-//        for (Integer idIngrediet : inIngredients) {
-//            int id = idIngrediet;
-//
-//            if (ing.size() > 0) {
-//                for (InIngredient i : ing) {
-//                    if (i.getId() == id) {
-//                        amount += i.getPrice();
-//                    }
-//
-//                }
-//            }
-//
-//        }
-//
-//        return amount;
-//
-//    }
-
 
 
 }

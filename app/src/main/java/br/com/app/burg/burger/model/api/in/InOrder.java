@@ -11,7 +11,7 @@ public class InOrder {
 
     private List<Integer> extras;
 
-    private Date date;
+    private String date;
 
 
     public List<Integer> getExtras() {
@@ -30,6 +30,7 @@ public class InOrder {
         this.id = id;
     }
 
+
     public String getId_sandwich() {
         return id_sandwich;
     }
@@ -38,11 +39,11 @@ public class InOrder {
         this.id_sandwich = id_sandwich;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }

@@ -84,6 +84,11 @@ public class IngredientsActivity extends AppCompatActivity {
         this.startActivity(myIntent);
     }
 
+    @OnClick(R.id.btPersonalize)
+    public void goToPersonalize() {
+        Intent myIntent = new Intent(this, PersonalizeSnackActivity.class);
+        this.startActivity(myIntent);
+    }
 
 
 }
