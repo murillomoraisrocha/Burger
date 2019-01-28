@@ -25,9 +25,6 @@ import br.com.app.burg.burger.utils.Util;
 ;
 //endregion
 
-/**
- * Created by Márcio Lima on 4/5/15.
- */
 public class IngredietsAdapter extends RecyclerView.Adapter<IngredietsAdapter.MyViewHolder> {
 
     //region GLOBAL VARIABLES

@@ -8,9 +8,7 @@ import com.mobsandgeeks.saripaar.ValidationError;
 
 import java.util.List;
 
-/**
- * Created by Márcio on 27/10/2017.
- */
+
 
 public class Validation {
 

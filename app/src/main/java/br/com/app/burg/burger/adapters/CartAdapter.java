@@ -28,9 +28,6 @@ import br.com.app.burg.burger.utils.Util;
 ;
 //endregion
 
-/**
- * Created by Márcio Lima on 4/5/15.
- */
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> {
 
     //region GLOBAL VARIABLES
